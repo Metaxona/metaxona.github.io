@@ -1,0 +1,27 @@
+:root {
+    scrollbar-color: #74a2c3 #5c738b;
+    scrollbar-width: thin !important;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #0000002f;
+    -webkit-box-shadow: inset 0 0 6px #0000002f;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #74a2c3;
+    outline: 1px solid #5c738b;
+    border-radius: 8px;
+}
+
+/* For Mozilla */
+
+.scrollbar {
+    scrollbar-color: #74a2c3 #5c738b;
+    scrollbar-width: thin !important;
+}
