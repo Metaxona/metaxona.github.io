@@ -13,11 +13,15 @@ function setThemeMode() {
     return {
         subscribe,
         light: () => {
-            isBrowser && localStorage.theme === 'light'
+            if (isBrowser) {
+                localStorage.theme = 'light'
+            }
             update(() => 'light')
         },
         dark: () => {
-            isBrowser && localStorage.theme === 'dark'
+            if (isBrowser) {
+                localStorage.theme = 'dark'
+            }
             update(() => 'dark')
         }
     }

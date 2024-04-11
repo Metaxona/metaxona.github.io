@@ -1,5 +1,7 @@
 import { browser } from '$app/environment'
 
+export const ssr = false
+
 /** @type {import('./$types').LayoutLoad} */
 export async function load() {
     let browserTheme = 'light'

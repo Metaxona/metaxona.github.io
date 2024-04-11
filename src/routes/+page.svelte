@@ -2,7 +2,7 @@
 import MetaxonaBannerPost from '$lib/assets/banners/mon_logo_building_stage_banner_post.png'
 import Card from '$lib/components/Card.svelte'
 import Github from '$lib/icons/Github.svelte'
-import { Icon, GlobeAlt } from 'svelte-hero-icons'
+import { GlobeAlt, Icon } from 'svelte-hero-icons'
 </script>
 
 <svelte:head>
@@ -78,7 +78,9 @@ import { Icon, GlobeAlt } from 'svelte-hero-icons'
         </Card>
     </div>
     
-    <div class="mt-12 flex justify-center items-center">
-        <img src="https://github-readme-stats.vercel.app/api?username=Metaxona&hide=contribs,prs&show_icons=true&theme=transparent" alt="github stats">
+    <div class="mt-12 flex flex-col justify-center items-center gap-4">
+        <img src="https://github-readme-stats.vercel.app/api?username=Metaxona&hide=contribs,prs&show_icons=true&theme=transparent&include_all_commits=false&rank_icon=github&show_owner=true" alt="github stats">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Metaxona&size_weight=0.5&count_weight=0.5&layout=compact&hide_progress=true&theme=transparent" alt="Top Langauges">
+        <small>** Private Repositories Not Included **</small>
     </div>
 </section>
