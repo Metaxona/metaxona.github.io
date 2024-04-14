@@ -3,6 +3,7 @@ import MetaxonaBannerPost from '$lib/assets/banners/mon_logo_building_stage_bann
 import Card from '$lib/components/Card.svelte'
 import Github from '$lib/icons/Github.svelte'
 import { GlobeAlt, Icon } from 'svelte-hero-icons'
+import projects from "$lib/contents/projects.json"
 </script>
 
 <svelte:head>
@@ -10,7 +11,7 @@ import { GlobeAlt, Icon } from 'svelte-hero-icons'
 </svelte:head>
 
 <div class="mb-12">
-    <img src={MetaxonaBannerPost} alt="Metaxona Banner">
+    <img src={MetaxonaBannerPost} alt="Metaxona Banner" />
 </div>
 
 <section class="pb-12">
@@ -20,62 +21,33 @@ import { GlobeAlt, Icon } from 'svelte-hero-icons'
     </div>
     
     <div class="flex flex-row flex-wrap gap-8 p-5 justify-center mt-12">
-        <Card width="w-80" height="h-auto">
-            <div class="flex flex-col gap-2 justify-center items-start">
-                <span class="font-bold text-xl">ScrowLite</span>
-                <p>An Escrow DApp</p>
-                <div class="flex flex-row flex-wrap gap-4">
-                    <a href="https://github.com/Metaxona/ScrowLiteDApp" target="_blank"><Github class="w-8 h-8" /></a>
-                    <a href="/ScrowLiteDApp" target="_blank"><Icon class="w-8 h-8" src={GlobeAlt} /></a>
+        {#each projects as project }    
+            <Card width="w-80" height="h-auto">
+                <div class="flex flex-col gap-2 justify-center items-start">
+                    <span class="font-bold text-xl">{project.title}</span>
+                    <p>{project.shortDescription}</p>
+                    <div class="flex flex-row flex-wrap gap-4">
+                        {#if project?.github }
+                            <a href={project.github} target="_blank"><Github class="w-8 h-8" /></a>
+                        {/if}
+                        {#if project?.live }
+                            <a href={project.live} target="_blank"><Icon class="w-8 h-8" src={GlobeAlt} /></a>
+                        {/if}
+                    </div>
+                    {#if project?.stack}
+                        <details>
+                            <summary>Stack</summary>
+                            <ul class="mt-2">
+                                {#each project.stack as item }
+                                    <li>- {item}</li>
+                                {/each}
+                            </ul>
+                            
+                        </details>
+                    {/if}
                 </div>
-            </div>
-        </Card>
-        <Card width="w-80" height="h-auto">
-            <div class="flex flex-col gap-2 justify-center items-start">
-                <span class="font-bold text-xl">ScrowLite (Contract)</span>
-                <p>An Escrow Solidity Contract</p>
-                <div class="flex flex-row flex-wrap gap-4">
-                    <a href="https://github.com/Metaxona/ScrowLite" target="_blank"><Github class="w-8 h-8" /></a>
-                </div>
-            </div>
-        </Card>
-        <Card width="w-80" height="h-auto">
-            <div class="flex flex-col gap-2 justify-center items-start">
-                <span class="font-bold text-xl">ERC Balance Library</span>
-                <p>A Solidity Smart Contract For Checking ERC 721, 20, and 1155 Balance</p>
-                <div class="flex flex-row flex-wrap gap-4">
-                    <a href="https://github.com/Metaxona/ERCBalanceLibrary" target="_blank"><Github class="w-8 h-8" /></a>
-                </div>
-            </div>
-        </Card>
-        <Card width="w-80" height="h-auto">
-            <div class="flex flex-col gap-2 justify-center items-start">
-                <span class="font-bold text-xl">Solidity Tools</span>
-                <p>Solidity Tools Used For Use When Developing on EVM Chains (Incomplete)</p>
-                <div class="flex flex-row flex-wrap gap-4">
-                    <a href="https://github.com/Metaxona/SolidityTools" target="_blank"><Github class="w-8 h-8" /></a>
-                    <a href="https://solidity-tools.vercel.app" target="_blank"><Icon class="w-8 h-8" src={GlobeAlt} /></a>
-                </div>
-            </div>
-        </Card>
-        <Card width="w-80" height="h-auto">
-            <div class="flex flex-col gap-2 justify-center items-start">
-                <span class="font-bold text-xl">Solidity Contract Size Checker</span>
-                <p>A Smart Contract used to check the size of a contract in the same chain</p>
-                <div class="flex flex-row flex-wrap gap-4">
-                    <a href="https://github.com/Metaxona/Solidity_Contract_Size_Checker" target="_blank"><Github class="w-8 h-8" /></a>
-                </div>
-            </div>
-        </Card>
-        <Card width="w-80" height="h-auto">
-            <div class="flex flex-col gap-2 justify-center items-start">
-                <span class="font-bold text-xl">Calc Fee Library</span>
-                <p>A Solidity Library For Calculating Fees in Percentage</p>
-                <div class="flex flex-row flex-wrap gap-4">
-                    <a href="https://github.com/Metaxona/CalcFeeLibrary" target="_blank"><Github class="w-8 h-8" /></a>
-                </div>
-            </div>
-        </Card>
+            </Card>
+        {/each}
     </div>
     
     <div class="mt-12 flex flex-col justify-center items-center gap-4">

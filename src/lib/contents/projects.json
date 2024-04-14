@@ -1,0 +1,91 @@
+[
+    {
+        "title": "Scrowlite",
+        "shortDescription": "An Escrow Dapp",
+        "github": "https://github.com/Metaxona/ScrowLiteDApp",
+        "live": "https://metaxona.com/ScrowLiteDApp",
+        "stack": [
+            "React | NextJs",
+            "ChakraUI",
+            "RainbowKit",
+            "Wagmi",
+            "Viem",
+            "Github Pages"
+        ]
+    },
+    {
+        "title": "ScrowLite (Contract)",
+        "shortDescription": "An Escrow Solidity Contract",
+        "github": "https://github.com/Metaxona/ScrowLite",
+        "live": "",
+        "stack": [
+            "Solidity",
+            "Hardhat",
+            "Mocha",
+            "Chai"
+        ]
+    },
+    {
+        "title": "ERC Balance Library",
+        "shortDescription": "A Solidity Smart Contract For Checking ERC 721, 20, and 1155 Balance",
+        "github": "https://github.com/Metaxona/ERCBalanceLibrary",
+        "live": "",
+        "stack": [
+            "Solidity"
+        ]
+    },
+    {
+        "title": "Solidity Tools",
+        "shortDescription": "Solidity Tools Used For Use When Developing on EVM Chains (Incomplete)",
+        "github": "https://github.com/Metaxona/SolidityTools",
+        "live": "https://solidity-tools.vercel.app/",
+        "stack": [
+            "React",
+            "ChakraUI",
+            "RainbowKit",
+            "Wagmi",
+            "Viem",
+            "Solidity",
+            "Hardhat"
+        ]
+    },
+    {
+        "title": "Solidity Contract Size Checker",
+        "shortDescription": "A Smart Contract used to check the size of a contract in the same chain",
+        "github": "https://github.com/Metaxona/Solidity_Contract_Size_Checker",
+        "live": "",
+        "stack": [
+            "Solidity"
+        ]
+    },
+    {
+        "title": "Calc Fee Library",
+        "shortDescription": "A Solidity Library For Calculating Fees in Percentage",
+        "github": "https://github.com/Metaxona/CalcFeeLibrary",
+        "live": "",
+        "stack": [
+            "Solidity"
+        ]
+    },
+    {
+        "title": "Pixels Land Viewer",
+        "shortDescription": "A Land Viewer For Pixels (a Web 3 game)",
+        "github": "",
+        "live": "https://pixels-land-viewer.vercel.app/",
+        "stack": [
+            "Sveltekit",
+            "Wagmi",
+            "Viem",
+            "Tailwind CSS"
+        ]
+    },
+    {
+        "title": "Metaxona",
+        "shortDescription": "Portfolio Website (this website)",
+        "github": "https://github.com/Metaxona/metaxona.github.io",
+        "live": "https://metaxona.com/",
+        "stack": [
+            "Sveltekit"
+        ]
+    }
+]
