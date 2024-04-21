@@ -11,7 +11,7 @@ const config = {
 			base: ""
 		}
 	},
-	preprocess: vitePreprocess()
+	preprocess: [vitePreprocess()]
 };
 
 export default config;

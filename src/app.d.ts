@@ -8,6 +8,16 @@ declare global {
         // interface PageState {}
         // interface Platform {}
     }
+
+    type PostMetadata = {
+        title:string;
+        slug: string;
+        description: string;
+        datePublished: string;
+        lastUpdated: string;
+        tags: string[];
+        categories: string[];
+    }
 }
 
 export type {}

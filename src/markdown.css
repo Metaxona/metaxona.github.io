@@ -1,0 +1,54 @@
+article li {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+article ul li a::after {
+    content: "";
+}
+
+article blockquote {
+    padding: 1rem;
+}
+
+article h2, h3, h4, h5, h6 {
+    margin-top: 1rem !important;
+    font-weight: bold !important;
+}
+
+article h2 {
+    font-size: larger !important;
+}
+
+article h3 {
+    font-size: large !important;
+}
+
+article h4 {
+    font-size: medium !important;
+}
+
+article h5 {
+    font-size: small !important;
+}
+
+article h6 {
+    font-size: smaller !important;
+}
+
+article p {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+article a {
+    color: rgb(0, 115, 209);
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+article a::after {
+    content: " 🔗";
+}
