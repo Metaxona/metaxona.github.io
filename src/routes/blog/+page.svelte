@@ -7,7 +7,7 @@
 </script>
 
 <div class="mb-12 w-full">
-    <img src={MetaxonaBannerPost} alt="Metaxona Blog Banner" width="inherit" />
+    <img src={MetaxonaBannerPost} alt="Metaxona Blog Banner" width="100%" />
 </div>
 
 <div class="px-4 pt-4 pb-40">
