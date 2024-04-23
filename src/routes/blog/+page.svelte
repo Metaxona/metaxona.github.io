@@ -6,7 +6,7 @@
     const {posts} = data
 </script>
 
-<div class="mb-12">
+<div class="mb-12 w-full">
     <img src={MetaxonaBannerPost} alt="Metaxona Blog Banner" />
 </div>
 

@@ -10,7 +10,7 @@ import projects from "$lib/contents/projects.json"
     <title>Metaxona</title>
 </svelte:head>
 
-<div class="mb-12">
+<div class="mb-12 w-full">
     <img src={MetaxonaBannerPost} alt="Metaxona Banner" />
 </div>
 
