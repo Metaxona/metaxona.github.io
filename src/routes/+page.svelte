@@ -11,7 +11,7 @@ import projects from "$lib/contents/projects.json"
 </svelte:head>
 
 <div class="mb-12 w-full">
-    <img src={MetaxonaBannerPost} alt="Metaxona Banner" />
+    <img src={MetaxonaBannerPost} alt="Metaxona Banner" width="inherit" />
 </div>
 
 <section class="pb-12">
