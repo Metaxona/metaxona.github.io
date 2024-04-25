@@ -1,6 +1,7 @@
 import { browser } from '$app/environment'
 
-export const ssr = false
+export const csr = false
+export const prerender = true;
 
 /** @type {import('./$types').LayoutLoad} */
 export async function load() {

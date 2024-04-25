@@ -1,3 +1,5 @@
+import { BASE_URL } from '$lib/utils/constants'
+
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch }) {
 
@@ -15,7 +17,7 @@ export async function load({ fetch }) {
 
     try {
         
-        const res = await fetch("/posts/metadata.json")
+        const res = await fetch(`${BASE_URL}/posts/metadata.json`)
         const data = await res.json()
         
         const tags = data.tags
@@ -32,7 +34,7 @@ export async function load({ fetch }) {
              * @param {string} slug 
              */
             async (slug) => {
-            const metadata = await fetch(`/posts/${slug}/metadata.json`)
+            const metadata = await fetch(`${BASE_URL}/posts/${slug}/metadata.json`)
             const m = await metadata.json()
             return m
         });

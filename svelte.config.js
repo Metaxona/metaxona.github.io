@@ -6,10 +6,16 @@ const config = {
 	kit: {
 		adapter: adapter({
 			fallback: '404.html',
+			precompress: false,
+            strict: true
 		}),
 		paths: {
 			base: ""
 		}
+	},
+	prerender: {
+		crawl: true,
+		enabled: true,
 	},
 	preprocess: [vitePreprocess()]
 };
