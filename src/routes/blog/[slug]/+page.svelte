@@ -2,6 +2,9 @@
     import "../../../markdown.css"
     export let data;
     import Banner from "$lib/assets/banners/mon_logo_building_stage_banner_2.png"
+    import { onMount } from "svelte";
+    import Prism from "prismjs";
+    import 'prismjs/themes/prism-tomorrow.min.css';
 
     const { slug, content, toc, metadata } = data;
     const { title, description, tags, categories, lastUpdated, datePublished } = metadata;
@@ -19,6 +22,20 @@
         image: "/assets/banner_meta_image.png",
         card: "summary_large_image"
     }
+
+    onMount(()=>{
+        document.querySelectorAll("pre").forEach((elem)=>{
+            const lang = elem.getAttribute("data-language")?.toLowerCase()
+            const code = document.createElement('code')
+            code.classList.add(`language-${lang}`)
+            code.innerHTML = elem.innerHTML
+            elem.innerHTML = ""
+            elem.classList.add(`line-number`)
+            elem.appendChild(code)
+        })
+
+        Prism.highlightAll()
+    })
 
 </script>
 

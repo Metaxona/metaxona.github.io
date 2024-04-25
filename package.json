@@ -29,6 +29,7 @@
 	"type": "module",
 	"dependencies": {
 		"@markdoc/markdoc": "^0.4.0",
+		"prismjs": "^1.29.0",
 		"svelte-hero-icons": "^5.1.0"
 	}
 }
