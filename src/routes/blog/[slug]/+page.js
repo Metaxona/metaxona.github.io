@@ -1,5 +1,8 @@
 import Markdoc from '@markdoc/markdoc';
 import { BASE_URL } from "$lib/utils/constants"
+
+export const csr = false
+
 /** @type {import('./$types').EntryGenerator} */
 export async function entries() {
     try{
