@@ -1,11 +1,11 @@
 import Markdoc from '@markdoc/markdoc';
 import { BASE_URL } from "$lib/utils/constants"
+import metadata from "../../../../static/posts/metadata.json"
 
 /** @type {import('./$types').EntryGenerator} */
-export async function entries() {
+export async function entries() {    
     try{
-        const response = await fetch(`${BASE_URL}/posts/metadata.json`)
-        let blogMetadata = await response.json()
+        let blogMetadata = metadata
 
         return blogMetadata.slugs.map(
         /** @param {string} slug */    

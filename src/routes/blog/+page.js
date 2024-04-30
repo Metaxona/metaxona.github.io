@@ -28,15 +28,21 @@ export async function load({ fetch }) {
         /**
          * @type {PostMetadata[] | undefined}
          */
-
         const postsMetadata = (await Promise.allSettled(postsData)).map(
             /**
              * @param {any} item 
              * @returns 
              */
             (item)=>item.value)
+            .map(item=>{
+                item.datePublished = new Date(item.datePublished).toLocaleDateString()
+                if(item.lastUpdated){
+                    item.lastUpdated = new Date(item.lastUpdated).toLocaleDateString()
+                }
+                return item
+            })
 
-
+        
         const posts = postsMetadata?.sort(
                 /**
                  * @param {PostMetadata} a 
@@ -44,12 +50,12 @@ export async function load({ fetch }) {
                  * @returns 
                  */
                 (a, b)=>{
-                return new Date(b.datePublished).getTime() - (new Date(b.datePublished)).getTime()
+                return new Date(b.datePublished).getTime() - (new Date(a.datePublished)).getTime()
             })
 
-            result = {
-                posts
-            }
+        result = {
+            posts
+        }
 
     
     } catch (err) {

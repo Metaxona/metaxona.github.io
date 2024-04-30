@@ -7,11 +7,11 @@
     import 'prismjs/themes/prism-tomorrow.min.css';
 
     const { slug, content, toc, metadata } = data;
-    const { title, description, tags, categories, lastUpdated, datePublished } = metadata;
+    const { title, description, tags, categories, lastUpdated, datePublished, keywords } = metadata;
 
-    const pageMetadata = {
+    $: pageMetadata = {
         title: `Metaxona - ${title}`,
-        keywords: `website, blog, ${tags.join()},${categories.join()}`,
+        keywords: `website, blog, ${tags.join()},${categories.join()},${keywords.join()}`,
         description: description,
         author: "Metaxona",
         publisher: "Metaxona",

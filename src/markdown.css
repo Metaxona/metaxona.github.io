@@ -41,6 +41,11 @@ article p {
     margin-bottom: 1rem !important;
 }
 
+article p > img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 article a {
     color: rgb(0, 115, 209);
 }

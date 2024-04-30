@@ -19,7 +19,7 @@
                 <div class="max-w-72 dark:bg-slate-800 bg-neutral-100 p-2">
                     <div class="text-md font-bold line-clamp-2 capitalize">{post.title}</div>
                     {#if post.lastUpdated}
-                        <div>Updated: {post.lastUpdated}</div>
+                        <small><span class="font-semibold">Updated:</span>  {post.lastUpdated}</small>
                     {:else}
                         <small><span class="font-semibold">Published:</span> {post.datePublished}</small>
                     {/if}
