@@ -1,9 +1,27 @@
-article li {
+article ul li {
     list-style-type: circle;
     list-style-position: inside;
 }
 
+article ul li::marker {
+    font-weight: bold;
+}
+
 article ul li a::after {
+    content: "";
+}
+
+article ol li {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+
+article ol li::marker {
+    font-weight: bold;
+}
+
+article ul ol a::after {
     content: "";
 }
 
@@ -56,4 +74,11 @@ article a:hover {
 
 article a::after {
     content: " 🔗";
+}
+
+article pre {
+    border-color: black;
+    border-width: 1px;
+    padding: 1rem;
+    border-radius: 0.2rem;
 }
