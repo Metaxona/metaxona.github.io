@@ -1,3 +1,16 @@
+---
+{
+    "title": "example",
+    "slug": "example",
+    "description": "example description and testing how a fairly long or extended description would look like on the client with or without text wrapping",
+    "datePublished": "04-22-2024",
+    "lastUpdated": "",
+    "keywords": ["programming", "code", "howTo"],
+    "tags": ["tag", "tag2", "tag3"],
+    "categories": ["category", "category2", "category3"]
+}
+---
+
 ## Deque lutea reposco frustraque Marte matris aera {% #deque-lutea-reposco-frustraque-marte-matris-aera %}
 
 Lorem markdownum certius frustra usus, actis duorum dextra satis haec recursus!

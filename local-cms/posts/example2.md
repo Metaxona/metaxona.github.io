@@ -1,3 +1,16 @@
+---
+{
+    "title": "example 2",
+    "slug": "example2",
+    "description": "example description and testing how a fairly long or extended description would look like on the client with or without text wrapping",
+    "datePublished": "04-22-2024",
+    "lastUpdated": "",
+    "keywords": ["programming", "code", "howTo"],
+    "tags": ["tag", "tag2", "tag3"],
+    "categories": ["category", "category2", "category3"]
+}
+---
+
 ## Clarum Achaemenides eminet inquit tangentia {% #clarum-achaemenides-eminet-inquit-tangentia %}
 
 Lorem **markdownum est**; est arva paelicis? Cum navem ipse, est magnorum
