@@ -85,7 +85,11 @@
         "github": "https://github.com/Metaxona/metaxona.github.io",
         "live": "https://metaxona.com/",
         "stack": [
-            "Sveltekit"
+            "Sveltekit",
+            "MarkDoc",
+            "Tailwind CSS",
+            "Custom Local Markdoc CMS",
+            "PrismJS"
         ]
     }
 ]
