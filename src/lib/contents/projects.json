@@ -89,7 +89,8 @@
             "MarkDoc",
             "Tailwind CSS",
             "Custom Local Markdoc CMS",
-            "PrismJS"
+            "PrismJS",
+            "Svelte-Sitemap"
         ]
     }
 ]

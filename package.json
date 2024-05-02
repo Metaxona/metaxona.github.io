@@ -4,8 +4,9 @@
 	"private": true,
 	"scripts": {
 		"dev": "pnpm build:posts && vite dev",
-		"build": "pnpm build:posts && vite build",
+		"build": "pnpm build:posts && vite build && pnpm build:sitemap",
 		"build:posts": "node ./local-cms/index.js",
+		"build:sitemap": "pnpm svelte-sitemap --domain https://metaxona.com",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
@@ -23,6 +24,7 @@
 		"postcss": "^8.4.38",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
+		"svelte-sitemap": "^2.6.0",
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5.0.0",
 		"vite": "^5.0.3"
