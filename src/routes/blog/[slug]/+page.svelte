@@ -5,11 +5,12 @@
     import { onMount } from "svelte";
     import Prism from "prismjs";
     import 'prismjs/themes/prism-tomorrow.min.css';
+    import ShareButtons from "$lib/components/ShareButtons.svelte";
 
     const { slug, content, toc, metadata } = data;
     const { title, description, tags, categories, lastUpdated, datePublished, keywords } = metadata;
 
-    $: pageMetadata = {
+    let pageMetadata = {
         title: `Metaxona - ${title}`,
         keywords: `website, blog, ${tags.join()},${categories.join()},${keywords.join()}`,
         description: description,
@@ -18,10 +19,12 @@
         copyright: "Metaxona",
         audience: "Everyone",
         type: "Website",
-        url: `https://metaxona.com`,
+        url: `https://metaxona.com/blog/${slug}`,
         image: "/assets/banner_meta_image.png",
         card: "summary_large_image"
     }
+
+    let postURL = pageMetadata.url
 
     onMount(()=>{
         document.querySelectorAll("pre").forEach((elem)=>{
@@ -77,7 +80,9 @@
         {@html content}
 
         <hr>
+        <ShareButtons title={`Metaxona - ${metadata.title}`} postURL={postURL} />
     </section>
+
 
     <section class="col-span-1 flex flex-col gap-2">
         <span class="font-bold">Metadata</span>
