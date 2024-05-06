@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import "../../../markdown.css"
     export let data;
     import Banner from "$lib/assets/banners/mon_logo_building_stage_banner_2.png"
@@ -6,6 +8,7 @@
     import Prism from "prismjs";
     import 'prismjs/themes/prism-tomorrow.min.css';
     import ShareButtons from "$lib/components/ShareButtons.svelte";
+    import Giscus from '@giscus/svelte';
 
     const { slug, content, toc, metadata } = data;
     const { title, description, tags, categories, lastUpdated, datePublished, keywords } = metadata;
@@ -25,6 +28,21 @@
     }
 
     let postURL = pageMetadata.url
+
+    const giscusConfig = {
+        repo: "Metaxona/metaxona.github.io",
+        repoId: "R_kgDOJ5o7yQ",
+        category: "Metaxona-Comment-Section",
+        categoryId: "DIC_kwDOJ5o7yc4CfKxC",
+        mapping: "pathname",
+        term: "Comments: Powered By Giscus",
+        reactionsEnabled: "1",
+        emitMetadata: "0",
+        inputPosition: "top",
+        theme: "preferred_color_scheme",
+        lang: "en",
+        loading: "lazy"
+    }
 
     onMount(()=>{
         document.querySelectorAll("pre").forEach((elem)=>{
@@ -81,6 +99,23 @@
 
         <hr>
         <ShareButtons title={`Metaxona - ${metadata.title}`} postURL={postURL} />
+        <section class="my-16">
+            <Giscus
+            id="comments"
+            repo={giscusConfig.repo}
+            repoId={giscusConfig.repoId}
+            category={giscusConfig.category}
+            categoryId={giscusConfig.categoryId}
+            mapping={giscusConfig.mapping}
+            term={giscusConfig.term}
+            reactionsEnabled={giscusConfig.reactionsEnabled}
+            emitMetadata={giscusConfig.emitMetadata}
+            inputPosition={giscusConfig.inputPosition}
+            theme={giscusConfig.theme}
+            lang={giscusConfig.lang}
+            loading={giscusConfig.loading}
+            />
+        </section>
     </section>
 
 

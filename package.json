@@ -31,6 +31,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@giscus/svelte": "^3.0.0",
 		"@markdoc/markdoc": "^0.4.0",
 		"prismjs": "^1.29.0",
 		"svelte-hero-icons": "^5.1.0"
