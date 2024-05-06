@@ -18,6 +18,8 @@
         <link rel="icon" type="image/svg+xml" href={"/favicon_light.svg"}>
     {/if}
 
+    <link rel="manifest" href="/manifest.json">
+
 </svelte:head>
 
 <Header />
