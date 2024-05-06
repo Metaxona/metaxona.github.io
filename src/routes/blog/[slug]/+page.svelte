@@ -9,6 +9,7 @@
     import 'prismjs/themes/prism-tomorrow.min.css';
     import ShareButtons from "$lib/components/ShareButtons.svelte";
     import Giscus from '@giscus/svelte';
+    import { themeMode } from "$lib/stores/themeStore";
 
     const { slug, content, toc, metadata } = data;
     const { title, description, tags, categories, lastUpdated, datePublished, keywords } = metadata;
@@ -111,7 +112,7 @@
             reactionsEnabled={giscusConfig.reactionsEnabled}
             emitMetadata={giscusConfig.emitMetadata}
             inputPosition={giscusConfig.inputPosition}
-            theme={giscusConfig.theme}
+            theme={$themeMode}
             lang={giscusConfig.lang}
             loading={giscusConfig.loading}
             />
