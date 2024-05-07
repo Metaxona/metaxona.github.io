@@ -10,6 +10,7 @@
     import ShareButtons from "$lib/components/ShareButtons.svelte";
     import Giscus from '@giscus/svelte';
     import { themeMode } from "$lib/stores/themeStore";
+    import { Icon, Rss } from "svelte-hero-icons";
 
     const { slug, content, toc, metadata } = data;
     const { title, description, tags, categories, lastUpdated, datePublished, keywords } = metadata;
@@ -129,24 +130,29 @@
             <p class="text-wrap">Updated: {new Date(lastUpdated).toLocaleDateString()}</p>
         {/if}
 
-        <span class="font-bold">slug:</span>
+        <span class="font-bold">Slug:</span>
         <p class="text-wrap">{slug}</p>
         
-        <span class="font-bold">description:</span>
+        <span class="font-bold">Description:</span>
         <p class="text-wrap">{description}</p>
         
-        <span class="font-bold">categories:</span>
+        <span class="font-bold">Categories:</span>
         <div class="flex flex-row flex-wrap gap-2">
             {#each categories as category}
                 <a href={`/categories/#${category}`} class="rounded-md bg-amber-400 text-black font-bold  text-xs p-1 w-fit">{category}</a>
             {/each}
         </div>
 
-        <span class="font-bold">tags:</span>
+        <span class="font-bold">Tags:</span>
         <div class="flex flex-row flex-wrap gap-2">
             {#each tags as tag}
             <a href={`/tags/#${tag}`} class="rounded-md bg-cyan-400 text-black font-bold  text-xs p-1 w-fit">{tag}</a>
             {/each}
+        </div>
+        
+        <span class="font-bold">RSS Feed:</span>
+        <div class="">
+            <a class="flex" href="/rss.xml" title="RSS Feed"><Icon src={Rss} size="32" /></a>
         </div>
 
     </section>

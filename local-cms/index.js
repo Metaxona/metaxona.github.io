@@ -2,6 +2,8 @@ import Markdoc from "@markdoc/markdoc";
 import fs from "node:fs/promises";
 import { exportJSONToFile } from "./utils/asyncJSONToFileExporter.js";
 import { exportMDToFile } from "./utils/asyncExportToMD.js";
+import { generateRSSContent } from "./utils/generateRSSContent.js";
+import { exportXMLToFile } from "./utils/asyncExportToXML.js";
 
 const ROOT = "."
 const BASE_PATH = "./local-cms"
@@ -120,8 +122,16 @@ async function generatePostMetadataFile(metadata){
         throw new Error(`Error Generating Post Metadata File: ${error}`)
     }
 }
+async function generateRSSFile(rssContent){
+    try {
+        await exportXMLToFile(rssContent, { fileName: "rss", pathdir: `${ROOT}/static/` })
+    } catch (error) {
+        throw new Error(`Error Generating RSS File: ${error}`)
+    }
+}
 
 async function main(){
+    console.log("Date Generated: ", new Date().toUTCString())
     console.log("Generating Posts...")
 
     try {
@@ -153,6 +163,10 @@ async function main(){
         await generatePostMetadataFile(metadata)
 
         console.log("Post Generation Done")
+        console.log("Generating RSS...")
+        const rssContent = generateRSSContent(frontMatters)
+        await (generateRSSFile(rssContent))
+        console.log("RSS Generation Done")
     } catch (error) {
         throw new Error(`Error Generating Posts: ${error}`)
     }

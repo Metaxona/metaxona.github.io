@@ -1,5 +1,6 @@
 <script>
     import MetaxonaBannerPost from '$lib/assets/banners/mon_logo_building_stage_banner_bv_2.png'
+    import { Icon, Rss } from 'svelte-hero-icons';
     /** @type {import('./$types').PageData} */
     export let data;
 
@@ -44,4 +45,9 @@
             </a>
         {/each}
     </section>
+
 </div>
+
+<section class="py-10">
+    <a class="flex justify-center items-center" href="/rss.xml" title="RSS Feed"><Icon src={Rss} size="32" /></a>
+</section>
