@@ -51,13 +51,15 @@ async function generateMarkdownFile(content, slug){
     }
 }
 
-function generateTOC(headings){
+function generateTOC(headings, frontmatter={}){
     let toc = `` 
 
     const formatted = headings.map(heading=>heading.attributes)
 
     formatted.forEach((content)=>{
-        const title = content.id.toLowerCase().split("-").map(function(word) {
+        const headerId = content.id
+        if(!headerId) throw new Error(`Missing Header Id For: ${frontmatter?.title} [${frontmatter?.slug}]`)
+        const title = headerId.toLowerCase().split("-").map(function(word) {
             return (word.charAt(0).toUpperCase() + word.slice(1));
         }).join(' ')
 
@@ -150,7 +152,7 @@ async function main(){
                 await generateMarkdownFile(content, slug);
                 
                 const headings = getHeadings(parsedContent);
-                const headingsFormatted = generateTOC(headings);
+                const headingsFormatted = generateTOC(headings, frontmatter);
                 await generateTOCMarkdownFile(headingsFormatted, slug);
             } catch (error) {
                 throw new Error(`Error Processing Posts: ${error}`)
