@@ -1,6 +1,6 @@
 import Markdoc from '@markdoc/markdoc';
 import { BASE_URL } from "$lib/utils/constants"
-import metadata from "../../../../static/posts/metadata.json"
+import metadata from "@/static/posts/metadata.json"
 
 /** @type {import('./$types').EntryGenerator} */
 export async function entries() {    

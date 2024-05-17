@@ -12,7 +12,13 @@
 </div>
 
 <div class="px-4 pt-4 pb-40">
-    <h1 class="text-4xl font-bold text-center pt-4 pb-20">Blog</h1>
+    <h1 class="text-4xl font-bold text-center pt-4 pb-10">Blog</h1>
+
+    <nav class="flex flex-wrap gap-4 text-lg font-semibold justify-center items-center pb-10">
+        <li class="list-none hover:underline hover:underline-offset-8"><a href="/blog/categories">Categories</a></li>
+        <span>|</span>
+        <li class="list-none hover:underline hover:underline-offset-8"><a href="/blog/tags">Tags</a></li>
+    </nav>
 
     <section class="flex flex-row flex-wrap justify-center items-start gap-4">
         {#each posts as post}

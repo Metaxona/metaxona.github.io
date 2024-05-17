@@ -1,7 +1,7 @@
 <script>
 // @ts-nocheck
 
-    import "../../../markdown.css"
+    import "@/src/markdown.css"
     export let data;
     import Banner from "$lib/assets/banners/mon_logo_building_stage_banner_2.png"
     import { onMount } from "svelte";
@@ -17,7 +17,7 @@
 
     let pageMetadata = {
         title: `Metaxona - ${title}`,
-        keywords: `website, blog, ${tags.join()},${categories.join()},${keywords.join()}`,
+        keywords: `website, blog, ${tags.join(",")} ${categories.join(",")},${keywords.join(",")}`,
         description: description,
         author: "Metaxona",
         publisher: "Metaxona",
@@ -139,14 +139,14 @@
         <span class="font-bold">Categories:</span>
         <div class="flex flex-row flex-wrap gap-2">
             {#each categories as category}
-                <a href={`/categories/#${category}`} class="rounded-md bg-amber-400 text-black font-bold  text-xs p-1 w-fit">{category}</a>
+                <a href={`/blog/categories/${category}`} class="rounded-md bg-amber-400 text-black font-bold  text-xs p-1 w-fit">{category}</a>
             {/each}
         </div>
 
         <span class="font-bold">Tags:</span>
         <div class="flex flex-row flex-wrap gap-2">
             {#each tags as tag}
-            <a href={`/tags/#${tag}`} class="rounded-md bg-cyan-400 text-black font-bold  text-xs p-1 w-fit">{tag}</a>
+            <a href={`/blog/tags/${tag}`} class="rounded-md bg-cyan-400 text-black font-bold  text-xs p-1 w-fit">{tag}</a>
             {/each}
         </div>
         

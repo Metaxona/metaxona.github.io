@@ -1,7 +1,7 @@
 <script>
-    import "../normalize.css";
-    import "../app.css";
-    import "../scrollstyle.css";
+    import "@/src/normalize.css";
+    import "@/src/app.css";
+    import "@/src/scrollstyle.css";
     import Header from "$lib/components/Header.svelte";
     import Footer from "$lib/components/Footer.svelte";
 
