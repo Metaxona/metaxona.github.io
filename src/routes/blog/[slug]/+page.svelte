@@ -139,14 +139,14 @@
         <span class="font-bold">Categories:</span>
         <div class="flex flex-row flex-wrap gap-2">
             {#each categories as category}
-                <a href={`/blog/categories/${category}`} class="rounded-md bg-amber-400 text-black font-bold  text-xs p-1 w-fit">{category}</a>
+                <a href={`/blog/categories/${encodeURIComponent(category)}`} class="rounded-md bg-amber-400 text-black font-bold  text-xs p-1 w-fit">{category}</a>
             {/each}
         </div>
 
         <span class="font-bold">Tags:</span>
         <div class="flex flex-row flex-wrap gap-2">
             {#each tags as tag}
-            <a href={`/blog/tags/${tag}`} class="rounded-md bg-cyan-400 text-black font-bold  text-xs p-1 w-fit">{tag}</a>
+            <a href={`/blog/tags/${encodeURIComponent(tag)}`} class="rounded-md bg-cyan-400 text-black font-bold  text-xs p-1 w-fit">{tag}</a>
             {/each}
         </div>
         
