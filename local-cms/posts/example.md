@@ -11,7 +11,7 @@
 }
 ---
 
-## Deque lutea reposco frustraque Marte matris aera {% #deque-lutea-reposco-frustraque-marte-matris-aera %}
+## Deque lutea reposco frustraque Marte matris aera
 
 Lorem markdownum certius frustra usus, actis duorum dextra satis haec recursus!
 Capessamus surgere. Nunc iubemur bis area gravitate repellit, et Eurytion
@@ -29,7 +29,7 @@ frater novas rabie adulterium avara erat Phoebus adversum, postquam clamantia
 timuitque! Veterem sidera *vult ignis* frondibus placidos quoniam origo tantique
 Luna antiquam, a neque: est ab opem.
 
-## Corpore praeceps tamen {% #corpore-praeceps-tamen %}
+## Corpore praeceps tamen
 
 Terricula limine poenas cervos in necem paterque, candida male simul petebatur.
 Novoque moderator recludere curat posses quinque pendebat, pede oculos. Partem
@@ -42,7 +42,7 @@ in iterum carmine, pars tua amor; quae.
 5. His moenia tendimus ut plus tantos solvitur
 6. Lacrimis ingemuit at quemque
 
-## Modo quam {% #modo-quam %}
+## Modo quam
 
 Hic minimas inlatum. Temperat sub aquis remoratur. Attollo tibi quamvis; [ossa
 intrat illinc](http://www.exuviis.org/) telorum belloque se

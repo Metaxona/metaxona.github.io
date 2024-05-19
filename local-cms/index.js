@@ -1,15 +1,20 @@
-import Markdoc from "@markdoc/markdoc";
+import {marked} from "marked";
 import fs from "node:fs/promises";
 import { exportJSONToFile } from "./utils/asyncJSONToFileExporter.js";
 import { exportMDToFile } from "./utils/asyncExportToMD.js";
 import { generateRSSContent } from "./utils/generateRSSContent.js";
 import { exportXMLToFile } from "./utils/asyncExportToXML.js";
+import frontMatterRemover from "../common-utils/markdown/frontMatterRemover.js";
+import parseJSONFrontMatter from "../common-utils/markdown/parseJSONFrontMatter.js";
+import autoHeadingIdRenderer from "../common-utils/markdown/autoHeadingIdRenderer.js";
 
 const ROOT = "."
 const BASE_PATH = "./local-cms"
 const POSTS_PATH = BASE_PATH + "/posts" 
 const OUT_DIR = ROOT + "/static/posts"
 const FILE_EXTENSION = ".md" 
+
+marked.use(autoHeadingIdRenderer)
 
 async function getSlugs(){
     try {
@@ -24,15 +29,31 @@ async function getContent(fileName){
 }
 
 function parseContent(content){
-    return Markdoc.parse(content)
+    return marked.parse(frontMatterRemover(content).content)
 }
 
 function getFrontMatter(content){
-    return JSON.parse(content.attributes.frontmatter)
+    return parseJSONFrontMatter(content).frontMatter
 }
 
 function getHeadings(content){
-    return content.children.filter((node)=>node.type === "heading")
+    const matcherString = `^---(.*?)---`
+    const matcher = new RegExp(matcherString, 's')
+    
+    content = content.replace(content.match(matcher)[0], "")
+
+    const lex = marked.lexer(content)
+    const filtered = lex.filter(item=> item.type === "heading")
+
+    if(filtered.length < 1) throw new Error("No Heading Found")
+
+    return filtered.map(heading=>{
+        return {
+            title: heading.text.startsWith("_") ? '\\' + heading.text : heading.text,
+            id: heading.text.toLowerCase().split(" ").join("-").replace("/", "-"),
+            level: heading.depth
+        }
+    })
 }
 
 async function generateMetadataFile(frontmatter, slug){
@@ -54,16 +75,11 @@ async function generateMarkdownFile(content, slug){
 function generateTOC(headings, frontmatter={}){
     let toc = `` 
 
-    const formatted = headings.map(heading=>heading.attributes)
-
-    formatted.forEach((content)=>{
+    headings.forEach((content)=>{
         const headerId = content.id
         if(!headerId) throw new Error(`Missing Header Id For: ${frontmatter?.title} [${frontmatter?.slug}]`)
-        const title = headerId.toLowerCase().split("-").map(function(word) {
-            return (word.charAt(0).toUpperCase() + word.slice(1));
-        }).join(' ')
-
-        toc += `- [${title}](#${content.id})\n`
+        const title = content.title
+        toc += '  '.repeat(content.level - 2) + `- [${title}](#${headerId})\n`
     })
 
     return toc
@@ -83,8 +99,7 @@ async function getAllFrontMatters(){
     const frontmatters = Promise.allSettled(slugs.map(async (post)=>{
         try {
             const content = await getContent(post);
-            const parsedContent = parseContent(content);
-            return getFrontMatter(parsedContent);
+            return getFrontMatter(content);
         } catch (error) {
             throw new Error(`Error Fetching Front Matters: ${error}`)
         }
@@ -143,15 +158,14 @@ async function main(){
         slugs.forEach(async (post)=>{
             try {
                 const content = await getContent(post);
-                const parsedContent = parseContent(content);
-                const frontmatter = getFrontMatter(parsedContent);
+                const frontmatter = getFrontMatter(content);
 
                 const slug = frontmatter.slug;
                 
                 await generateMetadataFile(frontmatter, slug);
                 await generateMarkdownFile(content, slug);
                 
-                const headings = getHeadings(parsedContent);
+                const headings = getHeadings(content);
                 const headingsFormatted = generateTOC(headings, frontmatter);
                 await generateTOCMarkdownFile(headingsFormatted, slug);
             } catch (error) {

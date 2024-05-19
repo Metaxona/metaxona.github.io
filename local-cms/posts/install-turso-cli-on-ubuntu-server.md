@@ -11,11 +11,11 @@
 }
 ---
 
-## Install Using Curl {% #install-using-curl %}
+## Install Using Curl
 
 `curl -sSfL https://get.tur.so/install.sh | bash`
 
-## Verification {% #verification %}
+## Verification
 
 If you are using ubuntu server and installing using you might get stuck ath the scarf page like me, press `q` to quit that page and then copy the link that would be shown after on the terminal that looks something like:
 
@@ -31,6 +31,6 @@ http://localhost:35975/?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM
 
 now you will encounter an error here stating that the `Site Can't Be Reached`, now change the `localhost` to the ip of your ubuntu server ex. `192.168.1.10` which would allow you to remotely verify your installation
 
-## Conclusion {% #conclusion %}
+## Conclusion
 
 To conclude the installation, restart your terminal and type `turso` to check if you successfully installed turso cli

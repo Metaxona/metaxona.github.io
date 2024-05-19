@@ -1,6 +1,7 @@
-import Markdoc from '@markdoc/markdoc';
+import { marked } from "marked"
 import { BASE_URL } from "$lib/utils/constants"
 import metadata from "@/static/posts/metadata.json"
+import { frontMatterRemover, autoHeadingIdRenderer } from '$lib/utils/markdown';
 
 /** @type {import('./$types').EntryGenerator} */
 export async function entries() {    
@@ -29,10 +30,12 @@ export async function load({fetch, params}) {
     let metadata = await response3.json()
     let postImage = `${BASE_URL}/posts/assets/${slug}.png`
 
-    
+    const { content: markdownContent } = frontMatterRemover(content)
 
-    content = Markdoc.renderers.html(Markdoc.transform(Markdoc.parse(content), /* config here */))
-    toc = Markdoc.renderers.html(Markdoc.transform(Markdoc.parse(toc), /* config here */))
+    marked.use(autoHeadingIdRenderer);
+
+    content = marked.parse(markdownContent).toString()
+    toc = marked.parse(toc).toString()
 
     return { slug: slug, content: content, toc: toc, metadata: metadata, postImage: postImage };
 };

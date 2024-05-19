@@ -47,16 +47,6 @@
     }
 
     onMount(()=>{
-        document.querySelectorAll("pre").forEach((elem)=>{
-            const lang = elem.getAttribute("data-language")?.toLowerCase()
-            const code = document.createElement('code')
-            code.classList.add(`language-${lang}`)
-            code.innerHTML = elem.innerHTML
-            elem.innerHTML = ""
-            elem.classList.add(`line-number`)
-            elem.appendChild(code)
-        })
-
         Prism.highlightAll()
     })
 
@@ -88,7 +78,7 @@
 </svelte:head> 
 
 <div class="grid grid-cols-1 md:grid-cols-7 justify-start items-start gap-2 pt-16 pb-40 px-4">
-    <section class="col-span-1 md:sticky md:top-20 flex flex-col items-center gap-2">
+    <section id="toc" class="col-span-1 md:sticky md:top-20 flex flex-col items-center gap-2">
         <h2 class="font-bold text-md">Table Of Contents</h2>
         {@html toc}
     </section>
@@ -97,7 +87,10 @@
         <span class="text-sm capitalize mt-5"><a href="/blog">Blog</a> / <a href="/blog/{slug}" aria-disabled="true">{metadata.title}</a></span>
         <img src={Banner} alt={slug}>
         <h1 class="font-bold text-4xl text-center pb-8 pt-4 capitalize">{title}</h1>
-        {@html content}
+        
+        <article class="text-lg">
+            {@html content}
+        </article>
 
         <hr>
         <ShareButtons title={`Metaxona - ${metadata.title}`} postURL={postURL} />

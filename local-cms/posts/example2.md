@@ -11,7 +11,7 @@
 }
 ---
 
-## Clarum Achaemenides eminet inquit tangentia {% #clarum-achaemenides-eminet-inquit-tangentia %}
+## Clarum Achaemenides eminet inquit tangentia
 
 Lorem **markdownum est**; est arva paelicis? Cum navem ipse, est magnorum
 fontis, modo aut luce! Exacta collo, secutus posset, et ab figuras in crura,
@@ -48,7 +48,7 @@ forti coluntur candidioribus nautas venerisque ferox, nec tuo quam quo. Vultus
 ego, odit legem, responsura quem Thebae non. Lentis sereno quamvis anguem
 Ulixes.
 
-## Phaethon neve quod cornua videre resolutis vulnere {% #phaethon-neve-quod-cornua-videre-resolutis-vulnere %}
+### Phaethon neve quod cornua videre resolutis vulnere
 
 Nec mota marmorea Iovem, orbi nomine et victae neque sed. Et vocat noctem, et
 aderis, sororum praeterita leonibus ille medentum, diu dextrae. Committere
