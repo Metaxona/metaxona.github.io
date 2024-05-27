@@ -141,7 +141,7 @@ article code {
     list-style-position: inside;
 }
 
-#toc ul li:hover {
+#toc ul li a:hover {
     text-decoration: underline;
 }
 
