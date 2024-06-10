@@ -23,7 +23,7 @@
 </svelte:head>
 
 <Header />
-    <main class="min-h-svh dark:bg-slate-900 dark:text-white">
+    <main class="min-h-svh bg-white dark:bg-slate-900 dark:text-white">
         <slot />
     </main>
 <Footer />

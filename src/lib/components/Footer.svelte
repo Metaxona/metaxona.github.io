@@ -4,7 +4,7 @@
     import { themeMode } from "$lib/stores/themeStore";
 </script>
 
-<footer class="shadow-md dark:bg-slate-800 dark:text-white flex flex-row justify-center items-center p-2">
+<footer class="shadow-md bg-slate-50 dark:bg-slate-800 dark:text-white flex flex-row justify-center items-center p-2">
     <div class="flex flex-row gap-2 justify-center items-center">
         <img src={ $themeMode === "light" ? MetaxonaBlack : MetaxonaWhite } alt="Metaxona" class="w-5 h-5" draggable="false" />
         <div>Metaxona</div>
