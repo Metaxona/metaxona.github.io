@@ -1,3 +1,7 @@
+article {
+    overflow-wrap: break-word;
+}
+
 article ul li {
     list-style-type: circle;
     list-style-position: inside;
