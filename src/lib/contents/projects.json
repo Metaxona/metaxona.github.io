@@ -1,5 +1,34 @@
 [
     {
+        "title": "Metaxona",
+        "shortDescription": "Portfolio Website (this website)",
+        "github": "https://github.com/Metaxona/metaxona.github.io",
+        "live": "https://metaxona.com/",
+        "stack": [
+            "Sveltekit",
+            "Marked",
+            "@giscus/svelte",
+            "Tailwind CSS",
+            "Custom Local Markdown CMS",
+            "PrismJS",
+            "Svelte-Sitemap"
+        ]
+    },
+    {
+        "title": "Bonkers SDK",
+        "shortDescription": "An SDK for interacting with a specific set of smart contracts on both the client and server side",
+        "github": "https://github.com/Metaxona/bonkers-sdk",
+        "live": "https://metaxona.com/bonkers-sdk",
+        "stack": [
+            "typescript",
+            "viem",
+            "@wagmi/core",
+            "vitest",
+            "typedoc",
+            "changeset"
+        ]
+    },
+    {
         "title": "Scrowlite",
         "shortDescription": "An Escrow Dapp",
         "github": "https://github.com/Metaxona/ScrowLiteDApp",
@@ -77,20 +106,6 @@
             "Wagmi",
             "Viem",
             "Tailwind CSS"
-        ]
-    },
-    {
-        "title": "Metaxona",
-        "shortDescription": "Portfolio Website (this website)",
-        "github": "https://github.com/Metaxona/metaxona.github.io",
-        "live": "https://metaxona.com/",
-        "stack": [
-            "Sveltekit",
-            "MarkDoc",
-            "Tailwind CSS",
-            "Custom Local Markdoc CMS",
-            "PrismJS",
-            "Svelte-Sitemap"
         ]
     }
 ]

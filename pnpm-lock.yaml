@@ -30,16 +30,16 @@ devDependencies:
     specifier: 1.6.4
     version: 1.6.4
   '@sveltejs/adapter-auto':
-    specifier: ^3.0.0
+    specifier: ^3.2.0
     version: 3.2.0(@sveltejs/kit@2.5.5)
   '@sveltejs/adapter-static':
     specifier: ^3.0.1
     version: 3.0.1(@sveltejs/kit@2.5.5)
   '@sveltejs/kit':
-    specifier: ^2.0.0
+    specifier: ^2.5.5
     version: 2.5.5(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.19)(vite@5.4.8)
   '@sveltejs/vite-plugin-svelte':
-    specifier: ^3.0.0
+    specifier: ^3.0.2
     version: 3.0.2(svelte@4.2.19)(vite@5.4.8)
   autoprefixer:
     specifier: ^10.4.19
@@ -48,10 +48,10 @@ devDependencies:
     specifier: ^8.4.38
     version: 8.4.38
   svelte:
-    specifier: '>=4.2.19'
+    specifier: ^4.2.19
     version: 4.2.19
   svelte-check:
-    specifier: ^3.6.0
+    specifier: ^3.6.9
     version: 3.6.9(postcss@8.4.38)(svelte@4.2.19)
   svelte-sitemap:
     specifier: ^2.6.0
@@ -60,10 +60,10 @@ devDependencies:
     specifier: ^3.4.3
     version: 3.4.3
   typescript:
-    specifier: ^5.0.0
+    specifier: ^5.4.5
     version: 5.4.5
   vite:
-    specifier: '>=5.2.14'
+    specifier: ^5.4.8
     version: 5.4.8
 
 packages:
@@ -785,7 +785,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.23.0
-      caniuse-lite: 1.0.30001608
+      caniuse-lite: 1.0.30001677
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -832,7 +832,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001608
+      caniuse-lite: 1.0.30001677
       electron-to-chromium: 1.4.731
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
@@ -852,8 +852,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001608:
-    resolution: {integrity: sha512-cjUJTQkk9fQlJR2s4HMuPMvTiRggl0rAVMtthQuyOlDWuqHXqN8azLq+pi8B2TjwKJ32diHjUqRIKeFX4z1FoA==}
+  /caniuse-lite@1.0.30001677:
+    resolution: {integrity: sha512-fmfjsOlJUpMWu+mAAtZZZHz7UEwsUxIIvu1TJfO1HqFQvB/B+ii0xr9B5HpbZY/mC4XZ8SvjHJqtAY6pDPQEog==}
     dev: true
 
   /chokidar@3.6.0:

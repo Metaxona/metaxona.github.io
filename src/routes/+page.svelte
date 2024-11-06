@@ -4,6 +4,7 @@ import Card from '$lib/components/Card.svelte'
 import Github from '$lib/icons/Github.svelte'
 import { GlobeAlt, Icon } from 'svelte-hero-icons'
 import projects from "$lib/contents/projects.json"
+import Badge from '../lib/components/Badge.svelte';
 
 const pageMetadata = {
         title: "Metaxona",
@@ -71,15 +72,11 @@ const pageMetadata = {
                         {/if}
                     </div>
                     {#if project?.stack}
-                        <details>
-                            <summary>Stack</summary>
-                            <ul class="mt-2">
-                                {#each project.stack as item }
-                                    <li>- {item}</li>
-                                {/each}
-                            </ul>
-                            
-                        </details>
+                        <div class="flex flex-wrap flex-row gap-2">
+                            {#each project.stack as item }
+                                <Badge value={item} />
+                            {/each}
+                        </div>
                     {/if}
                 </div>
             </Card>
